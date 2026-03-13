@@ -1,0 +1,41 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# React Native
+.expo/
+.expo-shared/
+*.jsbundle
+
+# Metro bundler cache
+.metro-health-check*
+
+# CocoaPods
+MetaWearApp/ios/Pods/
+MetaWearApp/ios/Podfile.lock
+
+# Xcode build artifacts
+MetaWearApp/ios/build/
+MetaWearApp/ios/*.xcworkspace
+*.xcuserstate
+DerivedData/
+*.ipa
+
+# Android build artifacts
+MetaWearApp/android/build/
+MetaWearApp/android/app/build/
+MetaWearApp/android/.gradle/
+*.apk
+*.aab
+
+# OS
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Jest
+coverage/

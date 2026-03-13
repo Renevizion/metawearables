@@ -1,0 +1,31 @@
+# Podfile
+# Run `pod install` in this directory before opening the .xcworkspace.
+
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, min_ios_version_supported
+
+prepare_react_native_project!
+
+# Uncomment when integrating the Meta MWDAT SDK:
+# pod 'MWDAT', :path => '../vendor/MWDAT'
+
+target 'MetaWearApp' do
+  config = use_native_modules!
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # Enables Hermes JS engine (recommended for performance)
+    :hermes_enabled => true,
+  )
+
+  post_install do |installer|
+    # React Native post-install hook
+    react_native_post_install(
+      installer,
+      config[:reactNativePath],
+      :mac_catalyst_enabled => false,
+    )
+  end
+end
